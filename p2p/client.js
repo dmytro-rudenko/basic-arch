@@ -12,16 +12,13 @@ const rl = readline.createInterface({
   output: process.stdout,
 });
 
-const ws = new WebSocket("ws://localhost:8080");
+const ws = new WebSocket("ws://localhost:3000");
 
 ws.on("open", () => {
-  let messages = [];
   const peers = {};
   const id = uuidv4(); // Unique ID for each peer
 
   ws.send(JSON.stringify({ type: "new-peer", id }));
-
-  console.log("messages", messages);
 
   ws.on("message", (message) => {;
     const data = JSON.parse(message);
