@@ -28,5 +28,5 @@ wss.on("connection", (ws) => {
 });
 
 console.log(
-  `Signaling server running on ws://${wss.options.host}:${wss.options.port}`
+  `Signaling server running on ws://${process.env.HOST || 'localhost'}:${wss.options.port}`
 );
