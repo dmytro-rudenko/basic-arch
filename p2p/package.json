@@ -1,0 +1,17 @@
+{
+  "name": "p2p",
+  "version": "1.0.0",
+  "description": "",
+  "main": "client.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "simple-peer": "^9.11.1",
+    "uuid": "^9.0.1",
+    "wrtc": "^0.4.7"
+  }
+}

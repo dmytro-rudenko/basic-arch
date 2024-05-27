@@ -12,7 +12,7 @@ const rl = readline.createInterface({
   output: process.stdout,
 });
 
-const ws = new WebSocket("ws://localhost:3000");
+const ws = new WebSocket(`ws://${process.env.HOST}:${process.env.PORT}`);
 
 ws.on("open", () => {
   const peers = {};

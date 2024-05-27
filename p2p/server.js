@@ -1,7 +1,10 @@
 // signaling-server.js
 const WebSocket = require("ws");
+const dotenv = require("dotenv");
 
-const wss = new WebSocket.Server({ port: 3000 });
+dotenv.config();
+
+const wss = new WebSocket.Server({ port: process.env.PORT || 3000 });
 
 wss.on("connection", (ws) => {
   ws.on("open", () => {
@@ -24,4 +27,6 @@ wss.on("connection", (ws) => {
   });
 });
 
-console.log("Signaling server running on ws://localhost:3000");
+console.log(
+  `Signaling server running on ws://${wss.options.host}:${wss.options.port}`
+);
