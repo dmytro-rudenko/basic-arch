@@ -2,6 +2,9 @@
 const WebSocket = require("ws");
 const Peer = require("simple-peer");
 const wrtc = require("wrtc");
+const dotenv = require("dotenv");
+
+dotenv.config();
 
 const { v4: uuidv4 } = require("uuid");
 
